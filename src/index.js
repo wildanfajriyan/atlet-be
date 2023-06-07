@@ -1,6 +1,6 @@
-const express = require('express');
-const { PrismaClient } = require('@prisma/client');
-var cors = require('cors');
+const express = require("express");
+const { PrismaClient } = require("@prisma/client");
+var cors = require("cors");
 
 const prisma = new PrismaClient();
 const app = express();
@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/atlet', async (req, res) => {
+app.get("/atlet", async (req, res) => {
   const {
     medali,
     jenisKelamin,
@@ -28,8 +28,8 @@ app.get('/atlet', async (req, res) => {
 
   // const { title } = req.query;
 
-  const medali_filter = medali?.split(',');
-  const olahraga_filter = olahraga?.split(',');
+  const medali_filter = medali?.split(",");
+  const olahraga_filter = olahraga?.split(",");
 
   const atlet = await prisma.atlet.findMany({
     where: {
@@ -62,7 +62,7 @@ app.get('/atlet', async (req, res) => {
     },
 
     orderBy: {
-      medali: 'asc',
+      medali: "asc",
     },
   });
 
@@ -70,7 +70,7 @@ app.get('/atlet', async (req, res) => {
 });
 
 // get all atlet
-app.get('/atlet', async (req, res) => {
+app.get("/atlet", async (req, res) => {
   try {
     const atlet = await prisma.atlet.findMany();
     res.status(200).json(atlet);
@@ -80,7 +80,7 @@ app.get('/atlet', async (req, res) => {
 });
 
 // get atlet by id
-app.get('/atlet/:id', async (req, res) => {
+app.get("/atlet/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -99,13 +99,18 @@ app.get('/atlet/:id', async (req, res) => {
 app.post(`/atlet`, async (req, res) => {
   const { nama, jenisKelamin, umur, tinggi, berat, olahraga, event, medali } =
     req.body;
+
+  let umurC = parseInt(umur);
+  let tinggiC = parseInt(tinggi);
+  let beratC = parseInt(berat);
+
   const result = await prisma.atlet.create({
     data: {
       nama,
       jenisKelamin,
-      umur,
-      tinggi,
-      berat,
+      umur: umurC,
+      tinggi: tinggiC,
+      berat: beratC,
       olahraga,
       event,
       medali,
