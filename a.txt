@@ -40,7 +40,7 @@
         "berat": 57,
         "olahraga": "atletik",
         "event": "Women's long jump",
-        "medali": "emas"
+        "medali": "Emas"
     }
     
     {

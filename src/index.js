@@ -115,7 +115,7 @@ app.post(`/atlet`, async (req, res) => {
 });
 
 // update data atlet by id
-app.put(`/atlet/:id`, async (req, res) => {
+app.patch(`/atlet/:id`, async (req, res) => {
   const { id } = req.params;
   const { nama, jenisKelamin, umur, tinggi, berat, olahraga, event, medali } =
     req.body;
