@@ -1,0 +1,57 @@
+
+    {
+        "nama" : "Muhammad Zul Ilmi",
+        "jenisKelamin": "L",
+        "umur": 27,
+        "tinggi": 168,
+        "berat": 89,
+        "olahraga": "angkat beban",
+        "event": "89 Kg putra",
+        "medali": "Perak"
+    }
+
+    {
+        "nama" : "Nurul Akmal",
+        "jenisKelamin": "P",
+        "umur": 30,
+        "tinggi": 164,
+        "berat": 87,
+        "olahraga": "angkat beban",
+        "event": "71 Kg putri",
+        "medali": "Perak"
+    }
+    
+    {
+        "nama" : "Lalu Muhammad Zohri",
+        "jenisKelamin": "L",
+        "umur": 22,
+        "tinggi": 172,
+        "berat": 60,
+        "olahraga": "atletik",
+        "event": "Men's 200 m",
+        "medali": "Perunggu"
+    }
+
+     {
+        "nama" : "Maria Natalia Londa",
+        "jenisKelamin": "P",
+        "umur": 32,
+        "tinggi": 163,
+        "berat": 57,
+        "olahraga": "atletik",
+        "event": "Women's long jump",
+        "medali": "emas"
+    }
+    
+    {
+        "nama" : "Aqsa Sutan Aswar",
+        "jenisKelamin": "L",
+        "umur": 25,
+        "tinggi": 169,
+        "berat": 60,
+        "olahraga": "Jet ski",
+        "event": "Endurance runabout open",
+        "medali": "perunggu"
+    }
+
+    
