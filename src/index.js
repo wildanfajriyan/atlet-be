@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.get("/atlet", async (req, res) => {
   const {
+    nama,
     medali,
     jenisKelamin,
     olahraga,
@@ -33,6 +34,9 @@ app.get("/atlet", async (req, res) => {
 
   const atlet = await prisma.atlet.findMany({
     where: {
+      nama: {
+        contains: nama || undefined
+      },
       umur: Number(umur) || undefined,
       // medali: medali || undefined,
       // medali: {
