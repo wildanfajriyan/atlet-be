@@ -51,7 +51,62 @@
         "berat": 60,
         "olahraga": "Jet ski",
         "event": "Endurance runabout open",
-        "medali": "perunggu"
+        "medali": "Perunggu"
     }
+
+    {
+        "nama" : "Pramudya Kusumawardana",
+        "jenisKelamin": "L",
+        "umur": 22,
+        "tinggi": 175,
+        "berat": 73,
+        "olahraga": "Bulu Tangkis",
+        "event": "Ganda putra",
+        "medali": "Emas"
+    }
+
+    {
+        "nama" : "Aero Sutan Asswar",
+        "jenisKelamin": "L",
+        "umur": 28,
+        "tinggi": 180,
+        "berat": 75,
+        "olahraga": "Jet Ski",
+        "event": "Endurance runabout open",
+        "medali": "Emas"
+    }
+
+    {
+        "nama" : "Puspa Arumsari",
+        "jenisKelamin": "P",
+        "umur": 30,
+        "tinggi": 163,
+        "berat": 54,
+        "olahraga": "Pencak Silat",
+        "event": "Women's artistc tunggal",
+        "medali": "Emas"
+    } 
+
+    {
+        "nama" : "Ahmad Zigi Zaresta",
+        "jenisKelamin": "L",
+        "umur": 25,
+        "tinggi": 167,
+        "berat": 76,
+        "olahraga": "Karate",
+        "event": "Men's individual kata",
+        "medali": "Emas"
+    } 
+
+    {
+        "nama" : "Agus Prayogo",
+        "jenisKelamin": "L",
+        "umur": 38,
+        "tinggi": 172,
+        "berat": 54,
+        "olahraga": "Atletik",
+        "event": "Men's Marathon",
+        "medali": "Emas"
+    } 
 
     
