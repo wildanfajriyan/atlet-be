@@ -35,7 +35,7 @@ app.get("/atlet", async (req, res) => {
   const atlet = await prisma.atlet.findMany({
     where: {
       nama: {
-        contains: nama || undefined
+        contains: nama || undefined,
       },
       umur: Number(umur) || undefined,
       // medali: medali || undefined,
@@ -66,7 +66,7 @@ app.get("/atlet", async (req, res) => {
     },
 
     orderBy: {
-      medali: "asc",
+      [orderBy || "id"]: "asc",
     },
   });
 
@@ -76,7 +76,11 @@ app.get("/atlet", async (req, res) => {
 // get all atlet
 app.get("/atlet", async (req, res) => {
   try {
-    const atlet = await prisma.atlet.findMany();
+    const atlet = await prisma.atlet.findMany({
+      orderBy: {
+        id: "asc",
+      },
+    });
     res.status(200).json(atlet);
   } catch (e) {
     res.status(500).json({ msg: e.message });
@@ -108,19 +112,23 @@ app.post(`/atlet`, async (req, res) => {
   let tinggiC = parseInt(tinggi);
   let beratC = parseInt(berat);
 
-  const result = await prisma.atlet.create({
-    data: {
-      nama,
-      jenisKelamin,
-      umur: umurC,
-      tinggi: tinggiC,
-      berat: beratC,
-      olahraga,
-      event,
-      medali,
-    },
-  });
-  res.json(result);
+  try {
+    const result = await prisma.atlet.create({
+      data: {
+        nama,
+        jenisKelamin,
+        umur: umurC,
+        tinggi: tinggiC,
+        berat: beratC,
+        olahraga,
+        event,
+        medali,
+      },
+    });
+    res.status(201).json(result);
+  } catch (error) {
+    res.status(400).json({ msg: error.message });
+  }
 });
 
 // update data atlet by id
@@ -128,31 +136,41 @@ app.patch(`/atlet/:id`, async (req, res) => {
   const { id } = req.params;
   const { nama, jenisKelamin, umur, tinggi, berat, olahraga, event, medali } =
     req.body;
-  const result = await prisma.atlet.update({
-    where: { id: Number(id) },
-    data: {
-      nama,
-      jenisKelamin,
-      umur,
-      tinggi,
-      berat,
-      olahraga,
-      event,
-      medali,
-    },
-  });
-  res.json(result);
+
+  try {
+    const result = await prisma.atlet.update({
+      where: { id: Number(id) },
+      data: {
+        nama,
+        jenisKelamin,
+        umur,
+        tinggi,
+        berat,
+        olahraga,
+        event,
+        medali,
+      },
+    });
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(400).json({ msg: error.message });
+  }
 });
 
 // delete data atlet by id
 app.delete(`/atlet/:id`, async (req, res) => {
   const { id } = req.params;
-  const atlet = await prisma.atlet.delete({
-    where: {
-      id: Number(id),
-    },
-  });
-  res.json(atlet);
+
+  try {
+    const atlet = await prisma.atlet.delete({
+      where: {
+        id: Number(id),
+      },
+    });
+    res.status(200).json(atlet);
+  } catch (error) {
+    res.status(400).json({ msg: error.message });
+  }
 });
 
 //
